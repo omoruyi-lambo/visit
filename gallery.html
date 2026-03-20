@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Cloud's Vista | Asaba, Nigeria</title>
+  <meta name="description" content="Browse Cloud's Vista gallery — stunning interior shots, rooftop views, creative cocktails and memorable dining moments in Asaba, Nigeria." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="order.html">Order Online</a>
+  <a href="tel:08051498689" style="color:var(--gold);"><i class="fa-solid fa-phone"></i> 0805 149 8689</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1560053608-13721b5a6ee3?w=1400&q=80');"></div>
+  <div class="page-hero-content">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Gallery</p>
+    <h1>Our Gallery</h1>
+  </div>
+</div>
+
+<!-- GALLERY CONTENT -->
+<main class="section">
+  <div class="section-header fade-in">
+    <span class="section-label">Visual Journey</span>
+    <h2 class="section-title">See What <em>Awaits You</em></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">A glimpse into the Cloud's Vista experience — through every corner, plate and glass.</p>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="gallery-tabs" role="tablist">
+    <button class="gallery-tab active" onclick="filterGallery('all', this)" role="tab" aria-selected="true">All</button>
+    <button class="gallery-tab" onclick="filterGallery('interior', this)" role="tab"><i class="fa-solid fa-building-columns"></i> Interior</button>
+    <button class="gallery-tab" onclick="filterGallery('food', this)" role="tab"><i class="fa-solid fa-utensils"></i> Food</button>
+    <button class="gallery-tab" onclick="filterGallery('drinks', this)" role="tab"><i class="fa-solid fa-martini-glass-citrus"></i> Drinks</button>
+    <button class="gallery-tab" onclick="filterGallery('events', this)" role="tab"><i class="fa-solid fa-champagne-glasses"></i> Events</button>
+  </div>
+
+  <!-- Masonry Grid -->
+  <!-- Replace Unsplash URLs with actual restaurant photos before deployment -->
+  <div class="masonry-grid" id="gallery-grid">
+
+    <!-- Interior -->
+    <div class="masonry-item" data-cat="interior" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Cloud's Vista main dining hall with ambient lighting" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="food" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Grilled Salmon Filet presentation" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="drinks" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=600&q=80" alt="Eve's Apple Drink signature cocktail" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="interior" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Rooftop terrace with stunning views" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="food" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Peppered Gizzard served with garnish" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="drinks" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Oreo City Smoothie topped with cream" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="events" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80" alt="Private event setup at Cloud's Vista" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="interior" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Cloud's Vista bar area" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="food" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="Freshly baked bread served warm" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="drinks" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1514362453360-8f94243c9996?w=600&q=80" alt="Cocktail bar selection" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="interior" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80" alt="Intimate lounge seating area" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="events" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Birthday celebration setup" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="food" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Fries and chicken platter" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="interior" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1560053608-13721b5a6ee3?w=600&q=80" alt="Outdoor terrace seating" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+    <div class="masonry-item" data-cat="drinks" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Amaretto Sour cocktail" loading="lazy" />
+      <div class="masonry-overlay"><span><i class="fa-solid fa-magnifying-glass"></i></span></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onclick="closeLightboxOnBg(event)">
+  <span class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery image enlarged" />
+</div>
+
+<!-- CTA -->
+<section class="section cta-section" style="padding: 60px clamp(16px, 5vw, 60px);">
+  <div class="cta-inner">
+    <div>
+      <h2 class="section-title">Like What You <em>See?</em></h2>
+      <p style="color:var(--cream-dim); margin-top:8px;">Come experience it in person. We'd love to have you.</p>
+    </div>
+    <div class="cta-buttons">
+      <a href="reservation.html" class="btn btn-gold">Book a Table</a>
+      <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in Asaba, Delta State.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="auth.html">Login / Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08051498689" style="color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a></li>
+        <li><a href="mailto:info@thecloudsvista.com" style="color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a></li>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Open daily · Closes 12 AM</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <div class="newsletter-form" id="newsletter-form">
+        <p>Get exclusive offers to your inbox.</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" id="newsletter-email" placeholder="Your email" aria-label="Newsletter email" />
+          <button onclick="handleNewsletter()" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <p class="newsletter-success" id="newsletter-success"><i class="fa-solid fa-circle-check" style="color:#6EE7B7;"></i> You're subscribed!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a></div>
+    <div class="dress-code-note"><i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome</div>
+    <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+<div id="cookie-banner">
+  <p>We use cookies. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // ── Gallery filter
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.gallery-tab').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    document.querySelectorAll('.masonry-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+        item.style.opacity = '0';
+        setTimeout(() => { item.style.transition = 'opacity 0.4s'; item.style.opacity = '1'; }, 50);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // ── Lightbox
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src.replace('w=600', 'w=1200');
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

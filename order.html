@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Online — Cloud's Vista | Asaba, Nigeria</title>
+  <meta name="description" content="Order food and drinks online from Cloud's Vista in Asaba. Delivery and takeaway available daily." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="order.html">Order Online</a>
+  <a href="tel:08051498689" style="color:var(--gold);"><i class="fa-solid fa-phone"></i> 0805 149 8689</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80');"></div>
+  <div class="page-hero-content">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Order Online</p>
+    <h1>Order Online</h1>
+  </div>
+</div>
+
+<main class="section">
+
+  <!-- Order type selector -->
+  <div style="display:flex; gap:12px; margin-bottom:36px; flex-wrap:wrap;">
+    <button id="order-type-delivery" class="btn btn-gold" onclick="setOrderType('delivery')" style="gap:8px;"><i class="fa-solid fa-motorcycle"></i> Delivery</button>
+    <button id="order-type-pickup" class="btn btn-outline" onclick="setOrderType('pickup')" style="gap:8px;"><i class="fa-solid fa-bag-shopping"></i> Takeaway / Pickup</button>
+  </div>
+
+  <div style="font-size:0.82rem; color:var(--cream-dim); margin-bottom:40px; padding:12px 18px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius-sm);">
+    <i class="fa-solid fa-circle-info" style="color:var(--gold);"></i> <strong>Powered by our delivery partners.</strong> Order below and we'll confirm via WhatsApp at <a href="tel:08051498689" style="color:var(--gold);">0805 149 8689</a>. Delivery available within Asaba.
+  </div>
+
+  <div class="order-layout">
+
+    <!-- MENU ITEMS -->
+    <div>
+      <!-- Drinks -->
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:16px; color:var(--gold);"><i class="fa-solid fa-martini-glass-citrus"></i> Drinks</h3>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=140&q=70" alt="Eve's Apple Drink" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Eve's Apple Drink ⭐</div>
+          <div class="order-item-desc">Our iconic signature cocktail. Apple spirits with botanicals.</div>
+          <div class="order-item-price">₦4,500</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Eve\'s Apple Drink', 4500, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=140&q=70" alt="Oreo City Smoothie" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Oreo City Smoothie ⭐</div>
+          <div class="order-item-desc">Creamy vanilla blended with Oreo, whipped cream topping.</div>
+          <div class="order-item-price">₦3,800</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Oreo City Smoothie', 3800, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=140&q=70" alt="Amaretto Sour" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Amaretto Sour</div>
+          <div class="order-item-desc">Classic Italian amaretto balanced with fresh lemon.</div>
+          <div class="order-item-price">₦4,000</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Amaretto Sour', 4000, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=140&q=70" alt="Tropical Sunrise Smoothie" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Tropical Sunrise</div>
+          <div class="order-item-desc">Mango, pineapple and orange blended fresh.</div>
+          <div class="order-item-price">₦3,200</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Tropical Sunrise', 3200, this)">+ Add</button>
+      </div>
+
+      <!-- Food -->
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; margin:28px 0 16px; color:var(--gold);"><i class="fa-solid fa-utensils"></i> Food</h3>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=140&q=70" alt="Peppered Gizzard" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Peppered Gizzard 🔥</div>
+          <div class="order-item-desc">Slow-stewed gizzard in bold pepper sauce.</div>
+          <div class="order-item-price">₦5,500</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Peppered Gizzard', 5500, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=140&q=70" alt="Grilled Salmon Filet" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Grilled Salmon Filet</div>
+          <div class="order-item-desc">Pan-seared Atlantic salmon with herb butter.</div>
+          <div class="order-item-price">₦12,500</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Grilled Salmon Filet', 12500, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=140&q=70" alt="Fries Chicken Turkey" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Fries, Chicken & Turkey ⭐</div>
+          <div class="order-item-desc">Golden fries with grilled chicken and smoked turkey.</div>
+          <div class="order-item-price">₦7,500</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Fries, Chicken & Turkey', 7500, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=140&q=70" alt="Jollof Rice and Chicken" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Party Jollof & Chicken</div>
+          <div class="order-item-desc">Smoky Nigerian party jollof with grilled chicken.</div>
+          <div class="order-item-price">₦6,500</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Party Jollof & Chicken', 6500, this)">+ Add</button>
+      </div>
+
+      <div class="order-item">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=140&q=70" alt="Freshly Baked Bread" loading="lazy" />
+        <div class="order-item-info">
+          <div class="order-item-name">Freshly Baked Bread</div>
+          <div class="order-item-desc">Warm artisan bread with herb butter.</div>
+          <div class="order-item-price">₦2,000</div>
+        </div>
+        <button class="add-to-order-btn" onclick="addToOrder('Freshly Baked Bread', 2000, this)">+ Add</button>
+      </div>
+
+    </div>
+
+    <!-- ORDER SUMMARY sidebar -->
+    <aside class="order-summary" aria-label="Order summary">
+      <h3><i class="fa-solid fa-cart-shopping"></i> Your Order</h3>
+      <div id="order-items-list">
+        <p class="empty-cart">Your order is empty.<br />Add items to get started!</p>
+      </div>
+
+      <div id="order-totals" style="display:none;">
+        <div class="order-line" style="margin-top:12px;">
+          <span>Subtotal</span>
+          <span id="order-subtotal">₦0</span>
+        </div>
+        <div class="order-line" id="delivery-fee-line" style="display:none;">
+          <span>Delivery fee</span>
+          <span>₦500</span>
+        </div>
+        <div class="order-line order-total">
+          <span>Total</span>
+          <span id="order-total">₦0</span>
+        </div>
+
+        <button class="btn btn-gold" onclick="handleCheckout()" style="width:100%; justify-content:center; margin-top:20px;">
+          <i class="fa-brands fa-whatsapp"></i> Checkout via WhatsApp
+        </button>
+        <button onclick="clearOrder()" style="width:100%; background:none; border:none; color:var(--cream-dim); font-size:0.8rem; cursor:pointer; margin-top:10px; padding:8px;">Clear Order</button>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in Asaba, Delta State.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="auth.html">Login / Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08051498689" style="color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a></li>
+        <li><a href="mailto:info@thecloudsvista.com" style="color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a></li>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Open daily · Closes 12 AM</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <div class="newsletter-form" id="newsletter-form">
+        <p>Get exclusive offers.</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" id="newsletter-email" placeholder="Your email" aria-label="Newsletter email" />
+          <button onclick="handleNewsletter()" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <p class="newsletter-success" id="newsletter-success"><i class="fa-solid fa-circle-check" style="color:#6EE7B7;"></i> You're subscribed!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a></div>
+    <div class="dress-code-note"><i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome</div>
+    <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert"></div>
+<div id="cookie-banner">
+  <p>We use cookies. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // ── Order state
+  let orderType = 'delivery';
+  const DELIVERY_FEE = 500;
+  let cart = {}; // { itemName: { price, qty } }
+
+  function setOrderType(type) {
+    orderType = type;
+    document.getElementById('order-type-delivery').className = 'btn ' + (type === 'delivery' ? 'btn-gold' : 'btn-outline');
+    document.getElementById('order-type-pickup').className = 'btn ' + (type === 'pickup' ? 'btn-gold' : 'btn-outline');
+    updateSummary();
+  }
+
+  function addToOrder(name, price, btn) {
+    if (!cart[name]) {
+      cart[name] = { price, qty: 0 };
+    }
+    cart[name].qty++;
+    btn.textContent = `✓ Added (${cart[name].qty})`;
+    btn.style.background = 'var(--gold)';
+    btn.style.color = 'var(--charcoal)';
+    updateSummary();
+    showToast(`${name} added to your order!`);
+  }
+
+  function updateSummary() {
+    const listEl = document.getElementById('order-items-list');
+    const totalsEl = document.getElementById('order-totals');
+    const deliveryLine = document.getElementById('delivery-fee-line');
+
+    const items = Object.entries(cart).filter(([,v]) => v.qty > 0);
+
+    if (items.length === 0) {
+      listEl.innerHTML = '<p class="empty-cart">Your order is empty.<br />Add items to get started!</p>';
+      totalsEl.style.display = 'none';
+      return;
+    }
+
+    let subtotal = 0;
+    listEl.innerHTML = items.map(([name, {price, qty}]) => {
+      subtotal += price * qty;
+      return `
+        <div class="order-line">
+          <span>${name} ×${qty}</span>
+          <span>₦${(price * qty).toLocaleString()}</span>
+        </div>`;
+    }).join('');
+
+    const total = subtotal + (orderType === 'delivery' ? DELIVERY_FEE : 0);
+    deliveryLine.style.display = orderType === 'delivery' ? '' : 'none';
+    document.getElementById('order-subtotal').textContent = `₦${subtotal.toLocaleString()}`;
+    document.getElementById('order-total').textContent = `₦${total.toLocaleString()}`;
+    totalsEl.style.display = '';
+  }
+
+  function clearOrder() {
+    cart = {};
+    document.querySelectorAll('.add-to-order-btn').forEach(btn => {
+      btn.textContent = '+ Add';
+      btn.style.background = '';
+      btn.style.color = '';
+    });
+    updateSummary();
+  }
+
+  function handleCheckout() {
+    const items = Object.entries(cart).filter(([,v]) => v.qty > 0);
+    if (!items.length) return;
+
+    const orderSummary = items
+      .map(([name, {price, qty}]) => `${qty}x ${name} (₦${(price*qty).toLocaleString()})`)
+      .join('%0A');
+
+    const total = items.reduce((sum, [,{price,qty}]) => sum + price*qty, 0) + (orderType === 'delivery' ? DELIVERY_FEE : 0);
+    const type = orderType === 'delivery' ? 'Delivery' : 'Takeaway/Pickup';
+
+    const message = `Hello Cloud's Vista!%0A%0AI'd like to place a ${type} order:%0A%0A${orderSummary}%0A%0ATotal: ₦${total.toLocaleString()}%0A%0APlease confirm availability.`;
+    window.open(`https://wa.me/2348051498689?text=${message}`, '_blank', 'noopener,noreferrer');
+  }
+</script>
+</body>
+</html>

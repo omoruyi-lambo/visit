@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud's Vista — Fine Dining in Asaba, Nigeria</title>
+  <meta name="description" content="Cloud's Vista is an upscale restaurant in Asaba, Nigeria offering dine-in, takeaway and delivery. Known for stunning ambiance, creative cocktails and delicious food." />
+  <meta name="keywords" content="restaurant Asaba, fine dining Nigeria, Cloud's Vista, cocktails Asaba, dinner Asaba, DBS Road" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cloud's Vista — Fine Dining in Asaba" />
+  <meta property="og:description" content="Where every meal feels like heaven. Stunning views, creative drinks & unforgettable food in Asaba, Nigeria." />
+  <meta property="og:type" content="restaurant" />
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Cloud's Vista",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "DD'S Centrium, DBS Rd, Central Area",
+      "addressLocality": "Asaba",
+      "addressRegion": "Delta",
+      "postalCode": "320108",
+      "addressCountry": "NG"
+    },
+    "telephone": "+2348051498689",
+    "url": "https://thecloudsvista.com",
+    "servesCuisine": "African, Continental",
+    "openingHours": "Mo-Su 11:00-00:00",
+    "hasMenu": "https://thecloudsvista.com/menu.html",
+    "acceptsReservations": true
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Fade-in animation helper -->
+  <style>
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <!-- Live hours status badge -->
+  <span id="hours-status" aria-live="polite"></span>
+  <!-- Reserve button (desktop) -->
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <!-- Hamburger (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="order.html">Order Online</a>
+  <a href="tel:08051498689" style="color:var(--gold); font-size:1.1rem;"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Welcome to Cloud's Vista">
+  <!-- Replace this Unsplash URL with your own hero image -->
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80');" role="img" aria-label="Elegant restaurant interior"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Asaba · Delta State · Nigeria</p>
+    <h1>Cloud's<br><em>Vista</em></h1>
+    <p class="hero-tagline">Where Every Meal Feels Like Heaven</p>
+    <div class="hero-buttons">
+      <a href="reservation.html" class="btn btn-gold">Reserve a Table</a>
+      <a href="menu.html" class="btn btn-outline">Explore Menu</a>
+      <a href="order.html" class="btn btn-ghost">Order Online</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     AMBIANCE SHOWCASE
+════════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="ambiance-title">
+  <div class="section-header fade-in">
+    <span class="section-label">The Experience</span>
+    <h2 class="section-title" id="ambiance-title">A Space That <em>Inspires</em></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Curated lighting, stunning views and an atmosphere crafted to make every visit unforgettable.</p>
+  </div>
+
+  <div class="ambiance-grid">
+    <!-- Replace Unsplash URLs with actual restaurant photos -->
+    <div class="ambiance-item fade-in">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Cloud's Vista main dining area with warm ambient lighting" loading="lazy" />
+      <div class="ambiance-caption">Main Dining</div>
+    </div>
+    <div class="ambiance-item fade-in">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Rooftop terrace with panoramic views" loading="lazy" />
+      <div class="ambiance-caption">The Top View</div>
+    </div>
+    <div class="ambiance-item fade-in">
+      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Bar area with creative cocktail selection" loading="lazy" />
+      <div class="ambiance-caption">The Bar</div>
+    </div>
+    <div class="ambiance-item fade-in">
+      <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&q=80" alt="Intimate lounge seating with mood lighting" loading="lazy" />
+      <div class="ambiance-caption">Lounge & Vibes</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURED DISHES
+════════════════════════════════════════════════════════════ -->
+<section class="section" style="background: var(--navy-mid);" aria-labelledby="dishes-title">
+  <div class="section-header centered fade-in">
+    <span class="section-label">Culinary Highlights</span>
+    <h2 class="section-title" id="dishes-title">Dishes Worth <em>Talking About</em></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">From our signature cocktails to show-stopping mains — every item is crafted with intention.</p>
+  </div>
+
+  <div class="dishes-grid">
+    <!-- Dish 1 — Eve's Apple Drink -->
+    <article class="dish-card fade-in">
+      <div class="dish-img-wrap">
+        <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=600&q=80" alt="Eve's Apple Drink - signature cocktail" loading="lazy" />
+        <span class="dish-badge"><i class="fa-solid fa-star"></i> Fan Favourite</span>
+      </div>
+      <div class="dish-body">
+        <h3>Eve's Apple Drink</h3>
+        <p>Our legendary signature cocktail. Crisp, refreshing and irresistible — guests never order just one.</p>
+        <div class="dish-price">₦4,500</div>
+        <div class="dish-card-actions">
+          <button class="dish-add-btn"
+            data-item-id="eves-apple"
+            onclick="addToCart('eves-apple','Eve\'s Apple Drink',4500,'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=70')">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+          <a href="menu.html" class="dish-view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Dish 2 — Grilled Salmon -->
+    <article class="dish-card fade-in">
+      <div class="dish-img-wrap">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Grilled Salmon Filet" loading="lazy" />
+        <span class="dish-badge"><i class="fa-solid fa-star"></i> Chef's Pick</span>
+      </div>
+      <div class="dish-body">
+        <h3>Grilled Salmon Filet</h3>
+        <p>Atlantic salmon, grilled to perfection with herb butter and seasonal vegetables. Elegant and satisfying.</p>
+        <div class="dish-price">₦12,500</div>
+        <div class="dish-card-actions">
+          <button class="dish-add-btn"
+            data-item-id="grilled-salmon"
+            onclick="addToCart('grilled-salmon','Grilled Salmon Filet',12500,'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=70')">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+          <a href="menu.html" class="dish-view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Dish 3 — Peppered Gizzard -->
+    <article class="dish-card fade-in">
+      <div class="dish-img-wrap">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Peppered Gizzard" loading="lazy" />
+        <span class="dish-badge"><i class="fa-solid fa-fire"></i> Most Ordered</span>
+      </div>
+      <div class="dish-body">
+        <h3>Peppered Gizzard</h3>
+        <p>Tender, slow-stewed gizzard in a rich, spicy pepper sauce. A Nigerian classic, elevated.</p>
+        <div class="dish-price">₦5,500</div>
+        <div class="dish-card-actions">
+          <button class="dish-add-btn"
+            data-item-id="peppered-gizzard"
+            onclick="addToCart('peppered-gizzard','Peppered Gizzard',5500,'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=70')">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+          <a href="menu.html" class="dish-view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Dish 4 — Oreo Smoothie -->
+    <article class="dish-card fade-in">
+      <div class="dish-img-wrap">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Oreo City Smoothie" loading="lazy" />
+        <span class="dish-badge"><i class="fa-solid fa-star"></i> Fan Favourite</span>
+      </div>
+      <div class="dish-body">
+        <h3>Oreo City Smoothie</h3>
+        <p>Creamy, dreamy and indulgent. Blended with love and topped with crumbled Oreo for that perfect finish.</p>
+        <div class="dish-price">₦3,800</div>
+        <div class="dish-card-actions">
+          <button class="dish-add-btn"
+            data-item-id="oreo-smoothie"
+            onclick="addToCart('oreo-smoothie','Oreo City Smoothie',3800,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200&q=70')">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+          <a href="menu.html" class="dish-view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div style="text-align:center; margin-top: 48px;">
+    <a href="menu.html" class="btn btn-outline">View Full Menu <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS CAROUSEL
+════════════════════════════════════════════════════════════ -->
+<section class="section testimonials-section" aria-labelledby="reviews-title">
+  <div class="section-header fade-in">
+    <span class="section-label">Guest Stories</span>
+    <h2 class="section-title" id="reviews-title">What Our Guests <em>Say</em></h2>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Testimonial track (overflow hidden on parent) -->
+  <div style="overflow: hidden;">
+    <div class="testimonial-track" id="testimonial-track">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I recommend the Eve's Apple Drink! Oreo City Smoothie I loved it!! French fries, chicken and turkey is a banger!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">N</div>
+          <div>
+            <div class="author-name">Narhzar</div>
+            <div class="author-location">Verified Guest · Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Very lovely place. Visiting from Australia, first time in Nigeria and this place literally felt like home. Food, service, ambiance — everything!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name">Sharon Nabwire</div>
+            <div class="author-location">Visiting from Australia · Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Aesthetically it has its game on lock. The top view, the lighting, the choice in colours — absolutely stunning. Will definitely be back."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <div class="author-name">Marcel Dibosa</div>
+            <div class="author-location">Verified Guest · Google Review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The ambiance is unmatched in Asaba. Whether you're on a date or celebrating, Cloud's Vista delivers a premium experience every single time."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div>
+            <div class="author-name">Adaeze O.</div>
+            <div class="author-location">Regular Guest · Asaba</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="carousel-controls">
+    <button class="carousel-btn" onclick="carouselPrev()" aria-label="Previous review">‹</button>
+    <button class="carousel-btn" onclick="carouselNext()" aria-label="Next review">›</button>
+    <div class="carousel-dots" role="tablist">
+      <div class="carousel-dot active" role="tab"></div>
+      <div class="carousel-dot" role="tab"></div>
+      <div class="carousel-dot" role="tab"></div>
+      <div class="carousel-dot" role="tab"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════════════════════════ -->
+<section class="section cta-section fade-in" aria-label="Call to action">
+  <div class="cta-inner">
+    <div>
+      <span class="section-label">Join Us Tonight</span>
+      <h2 class="section-title">Ready for an <em>Unforgettable</em> Evening?</h2>
+    </div>
+    <div class="cta-buttons">
+      <a href="reservation.html" class="btn btn-gold">Reserve a Table</a>
+      <a href="order.html" class="btn btn-ghost">Order Online</a>
+      <a href="tel:08051498689" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FIND US — MAP SECTION
+════════════════════════════════════════════════════════════ -->
+<section class="find-us-section" aria-label="Restaurant location">
+  <div class="find-us-inner">
+
+    <!-- Google Map embed -->
+    <div class="find-us-map">
+      <!--
+        To pin the exact restaurant location:
+        1. Go to maps.google.com
+        2. Search: DD'S Centrium, DBS Rd, Asaba
+        3. Click Share → Embed a map → Copy the full iframe src
+        4. Replace the src below with the copied URL
+      -->
+      <iframe
+        src="https://maps.google.com/maps?q=DD%27S+Centrium+DBS+Road+Central+Area+Asaba+Delta+Nigeria&output=embed&z=16&hl=en"
+        width="100%"
+        height="100%"
+        style="border:0; min-height:380px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Cloud's Vista on Google Maps — DD'S Centrium, DBS Rd, Asaba"
+        aria-label="Interactive Google Map showing Cloud's Vista restaurant location"
+      ></iframe>
+    </div>
+
+    <!-- Info panel -->
+    <div class="find-us-info">
+      <span class="section-label"><i class="fa-solid fa-location-dot"></i>&nbsp; Find Us</span>
+      <h2>Come <em>Visit</em> Us</h2>
+      <div class="find-us-divider"></div>
+
+      <div class="find-us-detail">
+        <div class="find-us-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div>
+          <div class="find-us-label">Address</div>
+          <div class="find-us-value">
+            DD'S Centrium, DBS Road<br />
+            Central Area, Asaba 320108<br />
+            Delta State, Nigeria
+          </div>
+        </div>
+      </div>
+
+      <div class="find-us-detail">
+        <div class="find-us-icon"><i class="fa-regular fa-clock"></i></div>
+        <div>
+          <div class="find-us-label">Opening Hours</div>
+          <div class="find-us-value">
+            Monday – Sunday
+            <span id="map-hours-status" class="hours-pill"></span>
+            <br />Open daily &nbsp;·&nbsp; Closes <strong style="color:var(--cream);">12 AM</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="find-us-detail">
+        <div class="find-us-icon"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <div class="find-us-label">Phone</div>
+          <div class="find-us-value">
+            <a href="tel:08051498689">0805 149 8689</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="find-us-detail">
+        <div class="find-us-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div>
+          <div class="find-us-label">Services</div>
+          <div class="find-us-value">Dine-in &nbsp;·&nbsp; Takeaway &nbsp;·&nbsp; Delivery</div>
+        </div>
+      </div>
+
+      <div class="find-us-actions">
+        <a href="https://maps.google.com/?q=DD%27S+Centrium+DBS+Road+Asaba+Delta+Nigeria"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-gold" style="font-size:0.8rem; flex:1; justify-content:center;">
+          <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+        </a>
+        <a href="reservation.html" class="btn btn-ghost" style="font-size:0.8rem; flex:1; justify-content:center;">
+          <i class="fa-regular fa-calendar"></i> Reserve
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+
+    <!-- Brand column -->
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in the heart of Asaba, Delta State. Where every detail is crafted for your pleasure.</p>
+      <p style="margin-top:10px; font-size:0.82rem; color:var(--cream-dim);">
+        <i class="fa-solid fa-location-dot" style="color:var(--gold);"></i> DD'S Centrium, DBS Rd, Central Area, Asaba
+      </p>
+      <!-- Social links -->
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Our Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="order.html">Order Online</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Hours & info -->
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <ul>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Mon – Sun</li>
+        <li style="color:var(--gold); font-size:0.9rem; font-weight:600;">Open · Closes 12 AM</li>
+        <li style="margin-top: 12px;">
+          <a href="tel:08051498689" style="display:flex; align-items:center; gap:6px; font-size:0.9rem; color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a>
+        </li>
+        <li>
+          <a href="mailto:info@thecloudsvista.com" style="font-size:0.9rem; color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a>
+        </li>
+        <li style="margin-top:14px;">
+          <a href="https://maps.google.com/?q=DD'S+Centrium+DBS+Rd+Asaba+Nigeria" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="font-size:0.75rem; padding:9px 18px;">Get Directions <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-col">
+      <h4>Stay Connected</h4>
+      <div class="newsletter-form" id="newsletter-form">
+        <p>Get exclusive offers and updates straight to your inbox.</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Newsletter email" />
+          <button onclick="handleNewsletter()" aria-label="Subscribe to newsletter">→</button>
+        </div>
+      </div>
+      <p class="newsletter-success" id="newsletter-success"><i class="fa-solid fa-circle-check" style="color:#6EE7B7;"></i> You're subscribed! Welcome to the family.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer bottom bar -->
+  <div class="footer-bottom">
+    <div>
+      © 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a>
+    </div>
+    <div class="dress-code-note">
+      <i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome
+    </div>
+    <div>
+      <a href="privacy.html">Privacy Policy</a> · <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Back to top -->
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+<!-- Toast notification container -->
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+<!-- Cookie consent banner -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-describedby="cookie-desc">
+  <p id="cookie-desc">
+    We use cookies to enhance your experience on our website.
+    By continuing to browse, you agree to our <a href="#privacy">Privacy Policy</a>.
+  </p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept Cookies</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

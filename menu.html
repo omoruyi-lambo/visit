@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Cloud's Vista | Fine Dining in Asaba, Nigeria</title>
+  <meta name="description" content="Explore Cloud's Vista full menu — signature cocktails, smoothies, peppered gizzard, grilled salmon and more. Dine-in, takeaway & delivery in Asaba." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .menu-item.hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="order.html">Order Online</a>
+  <a href="tel:08051498689" style="color:var(--gold);"><i class="fa-solid fa-phone"></i> 0805 149 8689</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1400&q=80');"></div>
+  <div class="page-hero-content">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Menu</p>
+    <h1>Our Menu</h1>
+  </div>
+</div>
+
+<main class="section">
+
+  <!-- Dietary Key -->
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px; font-size:0.8rem; color:var(--cream-dim);">
+    <span class="tag tag-rec"><i class="fa-solid fa-star"></i> Recommended</span>
+    <span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span>
+    <span class="tag tag-spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy</span>
+    <span style="padding:2px 8px; border-radius:20px; border:1px solid var(--glass-border); color:var(--cream-dim);">🐟 Contains Fish</span>
+  </div>
+
+  <!-- Filters -->
+  <div class="menu-filters" role="group" aria-label="Filter menu by category">
+    <button class="filter-btn active" onclick="filterMenu('all',this)">All Items</button>
+    <button class="filter-btn" onclick="filterMenu('drinks',this)"><i class="fa-solid fa-martini-glass-citrus"></i> Drinks</button>
+    <button class="filter-btn" onclick="filterMenu('food',this)"><i class="fa-solid fa-utensils"></i> Food</button>
+    <button class="filter-btn" onclick="filterMenu('specials',this)"><i class="fa-solid fa-star"></i> Specials</button>
+  </div>
+
+  <!-- Top action row -->
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:40px; align-items:center;">
+    <button class="btn btn-ghost" onclick="showToast('Menu PDF coming soon! Call us to request a copy.')" style="font-size:0.8rem;">
+      <i class="fa-solid fa-file-pdf"></i> Download Menu (PDF)
+    </button>
+    <button class="btn btn-gold" id="view-cart-top" onclick="openCart()" style="font-size:0.8rem;">
+      <i class="fa-solid fa-cart-shopping"></i> View Cart
+      <span id="cart-top-badge" style="display:none; background:var(--charcoal); color:var(--gold); border-radius:20px; padding:1px 8px; font-size:0.72rem; margin-left:4px;"></span>
+    </button>
+  </div>
+
+
+  <!-- ── COCKTAILS ─────────────────────────────────────── -->
+  <div class="menu-section" data-category="drinks">
+    <h2 class="menu-section-title"><span class="menu-section-icon"><i class="fa-solid fa-martini-glass"></i></span> Cocktails</h2>
+    <div class="menu-items-grid" id="cocktails-grid">
+
+      <div class="menu-item" data-category="drinks specials">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=70" alt="Eve's Apple Drink" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Eve's Apple Drink</span><span class="menu-item-price">₦4,500</span></div>
+          <p class="menu-item-desc">Our iconic signature cocktail. Apple-based spirits with a secret blend of botanicals. One sip and you'll understand why everyone raves about it.</p>
+          <div class="menu-item-tags"><span class="tag tag-rec"><i class="fa-solid fa-star"></i> Most Recommended</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="eves-apple"
+              onclick="addToCart('eves-apple','Eve\'s Apple Drink',4500,'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('eves-apple','Eve\'s Apple Drink',4500,'https://images.unsplash.com/photo-1546171753-97d7676e4602?w=200&q=70','Our iconic signature cocktail. Apple-based spirits with a secret blend of botanicals. One sip and you\'ll understand why everyone raves about it.','rec:Most Recommended')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&q=70" alt="Amaretto Sour" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Amaretto Sour</span><span class="menu-item-price">₦4,000</span></div>
+          <p class="menu-item-desc">Classic Italian amaretto balanced with freshly squeezed lemon juice and a dash of bitters. Elegant and timeless.</p>
+          <div class="menu-item-tags"></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="amaretto-sour"
+              onclick="addToCart('amaretto-sour','Amaretto Sour',4000,'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('amaretto-sour','Amaretto Sour',4000,'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&q=70','Classic Italian amaretto balanced with freshly squeezed lemon juice and a dash of bitters. Elegant and timeless.','')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1514362453360-8f94243c9996?w=200&q=70" alt="Passion Fruit Mojito" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Passion Fruit Mojito</span><span class="menu-item-price">₦4,200</span></div>
+          <p class="menu-item-desc">Fresh mint, passion fruit, lime and rum over crushed ice. Tropical, refreshing, irresistible.</p>
+          <div class="menu-item-tags"></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="passion-mojito"
+              onclick="addToCart('passion-mojito','Passion Fruit Mojito',4200,'https://images.unsplash.com/photo-1514362453360-8f94243c9996?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('passion-mojito','Passion Fruit Mojito',4200,'https://images.unsplash.com/photo-1514362453360-8f94243c9996?w=200&q=70','Fresh mint, passion fruit, lime and rum over crushed ice. Tropical, refreshing, irresistible.','')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70" alt="Sunset Sangria" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Sunset Sangria</span><span class="menu-item-price">₦3,800</span></div>
+          <p class="menu-item-desc">Red wine infused with seasonal fruits, cinnamon and orange zest. Served with a glow that matches the sky.</p>
+          <div class="menu-item-tags"></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="sunset-sangria"
+              onclick="addToCart('sunset-sangria','Sunset Sangria',3800,'https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('sunset-sangria','Sunset Sangria',3800,'https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70','Red wine infused with seasonal fruits, cinnamon and orange zest. Served with a glow that matches the sky.','')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SMOOTHIES ─────────────────────────────────────── -->
+  <div class="menu-section" data-category="drinks">
+    <h2 class="menu-section-title"><span class="menu-section-icon"><i class="fa-solid fa-glass-water"></i></span> Smoothies &amp; Non-Alcoholic</h2>
+    <div class="menu-items-grid">
+
+      <div class="menu-item" data-category="drinks specials">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200&q=70" alt="Oreo City Smoothie" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Oreo City Smoothie</span><span class="menu-item-price">₦3,800</span></div>
+          <p class="menu-item-desc">Thick vanilla base blended with crushed Oreo cookies, topped with whipped cream and crumble. A dreamy indulgence.</p>
+          <div class="menu-item-tags"><span class="tag tag-rec"><i class="fa-solid fa-star"></i> Fan Favourite</span> <span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="oreo-smoothie"
+              onclick="addToCart('oreo-smoothie','Oreo City Smoothie',3800,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('oreo-smoothie','Oreo City Smoothie',3800,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=200&q=70','Thick vanilla base blended with crushed Oreo cookies, topped with whipped cream and crumble. A dreamy indulgence.','rec:Fan Favourite|veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=200&q=70" alt="Tropical Sunrise" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Tropical Sunrise</span><span class="menu-item-price">₦3,200</span></div>
+          <p class="menu-item-desc">Mango, pineapple and orange blended fresh. A burst of sunshine in every sip.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="tropical-sunrise"
+              onclick="addToCart('tropical-sunrise','Tropical Sunrise',3200,'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('tropical-sunrise','Tropical Sunrise',3200,'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=200&q=70','Mango, pineapple and orange blended fresh. A burst of sunshine in every sip.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&q=70" alt="Virgin Pina Colada" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Virgin Piña Colada</span><span class="menu-item-price">₦3,000</span></div>
+          <p class="menu-item-desc">Coconut cream, pineapple juice and crushed ice. Non-alcoholic and absolutely delicious.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="pina-colada"
+              onclick="addToCart('pina-colada','Virgin Piña Colada',3000,'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('pina-colada','Virgin Piña Colada',3000,'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&q=70','Coconut cream, pineapple juice and crushed ice. Non-alcoholic and absolutely delicious.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SMALL CHOPS ────────────────────────────────────── -->
+  <div class="menu-section" data-category="food">
+    <h2 class="menu-section-title"><span class="menu-section-icon"><i class="fa-solid fa-drumstick-bite"></i></span> Small Chops &amp; Starters</h2>
+    <div class="menu-items-grid">
+
+      <div class="menu-item" data-category="food specials">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=70" alt="Peppered Gizzard" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Peppered Gizzard</span><span class="menu-item-price">₦5,500</span></div>
+          <p class="menu-item-desc">Slow-stewed chicken gizzard in a bold, aromatic pepper sauce with onions and tomatoes. A Nigerian classic, done right.</p>
+          <div class="menu-item-tags"><span class="tag tag-rec"><i class="fa-solid fa-star"></i> Most Ordered</span> <span class="tag tag-spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="peppered-gizzard"
+              onclick="addToCart('peppered-gizzard','Peppered Gizzard',5500,'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('peppered-gizzard','Peppered Gizzard',5500,'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=70','Slow-stewed chicken gizzard in a bold, aromatic pepper sauce with onions and tomatoes. A Nigerian classic, done right.','rec:Most Ordered|spicy:Spicy')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1625938144755-652e08e359b7?w=200&q=70" alt="Puff Puff" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Crispy Puff Puff</span><span class="menu-item-price">₦2,500</span></div>
+          <p class="menu-item-desc">Light and fluffy deep-fried dough, dusted with powdered sugar. Served warm with a dipping sauce.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="puff-puff"
+              onclick="addToCart('puff-puff','Crispy Puff Puff',2500,'https://images.unsplash.com/photo-1625938144755-652e08e359b7?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('puff-puff','Crispy Puff Puff',2500,'https://images.unsplash.com/photo-1625938144755-652e08e359b7?w=200&q=70','Light and fluffy deep-fried dough, dusted with powdered sugar. Served warm with a dipping sauce.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70" alt="Spring Rolls" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Spring Rolls (6 pcs)</span><span class="menu-item-price">₦3,500</span></div>
+          <p class="menu-item-desc">Crispy golden rolls filled with seasoned minced meat and vegetables. Served with sweet chilli sauce.</p>
+          <div class="menu-item-tags"><span class="tag tag-spicy"><i class="fa-solid fa-pepper-hot"></i> Mild Spice</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="spring-rolls"
+              onclick="addToCart('spring-rolls','Spring Rolls (6 pcs)',3500,'https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('spring-rolls','Spring Rolls (6 pcs)',3500,'https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=200&q=70','Crispy golden rolls filled with seasoned minced meat and vegetables. Served with sweet chilli sauce.','spicy:Mild Spice')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MAINS ─────────────────────────────────────────── -->
+  <div class="menu-section" data-category="food">
+    <h2 class="menu-section-title"><span class="menu-section-icon"><i class="fa-solid fa-utensils"></i></span> Mains</h2>
+    <div class="menu-items-grid">
+
+      <div class="menu-item" data-category="food specials">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=70" alt="Grilled Salmon Filet" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Grilled Salmon Filet</span><span class="menu-item-price">₦12,500</span></div>
+          <p class="menu-item-desc">Pan-seared Atlantic salmon with herb butter, roasted cherry tomatoes and seasonal vegetables. Elegance on a plate.</p>
+          <div class="menu-item-tags"><span class="tag tag-rec"><i class="fa-solid fa-star"></i> Chef's Pick</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="grilled-salmon"
+              onclick="addToCart('grilled-salmon','Grilled Salmon Filet',12500,'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('grilled-salmon','Grilled Salmon Filet',12500,'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&q=70','Pan-seared Atlantic salmon with herb butter, roasted cherry tomatoes and seasonal vegetables. Elegance on a plate.','rec:Chef\'s Pick')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food specials">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=200&q=70" alt="Fries Chicken Turkey" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Fries, Chicken &amp; Turkey</span><span class="menu-item-price">₦7,500</span></div>
+          <p class="menu-item-desc">Golden crispy fries, grilled chicken and smoked turkey. As our guest said — "It's a banger!" Enough said.</p>
+          <div class="menu-item-tags"><span class="tag tag-rec"><i class="fa-solid fa-star"></i> Guest Favourite</span> <span class="tag tag-spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy option</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="fries-chicken-turkey"
+              onclick="addToCart('fries-chicken-turkey','Fries, Chicken & Turkey',7500,'https://images.unsplash.com/photo-1562967914-608f82629710?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('fries-chicken-turkey','Fries, Chicken & Turkey',7500,'https://images.unsplash.com/photo-1562967914-608f82629710?w=200&q=70','Golden crispy fries, grilled chicken and smoked turkey. As our guest said — \"It\'s a banger!\" Enough said.','rec:Guest Favourite|spicy:Spicy option')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=200&q=70" alt="Jollof Rice and Chicken" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Party Jollof &amp; Chicken</span><span class="menu-item-price">₦6,500</span></div>
+          <p class="menu-item-desc">Rich, smoky Nigerian party jollof rice served with grilled chicken. The national treasure, elevated.</p>
+          <div class="menu-item-tags"><span class="tag tag-spicy"><i class="fa-solid fa-pepper-hot"></i> Spicy</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="party-jollof"
+              onclick="addToCart('party-jollof','Party Jollof & Chicken',6500,'https://images.unsplash.com/photo-1574484284002-952d92456975?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('party-jollof','Party Jollof & Chicken',6500,'https://images.unsplash.com/photo-1574484284002-952d92456975?w=200&q=70','Rich, smoky Nigerian party jollof rice served with grilled chicken. The national treasure, elevated.','spicy:Spicy')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=70" alt="Freshly Baked Bread" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Freshly Baked Bread</span><span class="menu-item-price">₦2,000</span></div>
+          <p class="menu-item-desc">Warm, soft artisan bread baked daily in-house, served with herb butter. Perfect as a starter or side.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="baked-bread"
+              onclick="addToCart('baked-bread','Freshly Baked Bread',2000,'https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('baked-bread','Freshly Baked Bread',2000,'https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=70','Warm, soft artisan bread baked daily in-house, served with herb butter. Perfect as a starter or side.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1559058789-672da06263d8?w=200&q=70" alt="Pasta al Pomodoro" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Pasta al Pomodoro</span><span class="menu-item-price">₦5,800</span></div>
+          <p class="menu-item-desc">Al-dente pasta in a rich San Marzano tomato sauce, finished with fresh basil and Parmesan shavings.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="pasta-pomodoro"
+              onclick="addToCart('pasta-pomodoro','Pasta al Pomodoro',5800,'https://images.unsplash.com/photo-1559058789-672da06263d8?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('pasta-pomodoro','Pasta al Pomodoro',5800,'https://images.unsplash.com/photo-1559058789-672da06263d8?w=200&q=70','Al-dente pasta in a rich San Marzano tomato sauce, finished with fresh basil and Parmesan shavings.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── DESSERTS ───────────────────────────────────────── -->
+  <div class="menu-section" data-category="food">
+    <h2 class="menu-section-title"><span class="menu-section-icon"><i class="fa-solid fa-cake-candles"></i></span> Desserts</h2>
+    <div class="menu-items-grid">
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=200&q=70" alt="Molten Lava Cake" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">Molten Lava Cake</span><span class="menu-item-price">₦4,000</span></div>
+          <p class="menu-item-desc">Warm dark chocolate cake with a flowing molten centre, served with vanilla ice cream. Pure indulgence.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="lava-cake"
+              onclick="addToCart('lava-cake','Molten Lava Cake',4000,'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('lava-cake','Molten Lava Cake',4000,'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=200&q=70','Warm dark chocolate cake with a flowing molten centre, served with vanilla ice cream. Pure indulgence.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item" data-category="food">
+        <img class="menu-item-img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=70" alt="Cheesecake Slice" loading="lazy" />
+        <div class="menu-item-info">
+          <div class="menu-item-top"><span class="menu-item-name">New York Cheesecake</span><span class="menu-item-price">₦3,500</span></div>
+          <p class="menu-item-desc">Creamy, dense classic cheesecake on a buttery biscuit base, topped with fresh berry compote.</p>
+          <div class="menu-item-tags"><span class="tag tag-veg"><i class="fa-solid fa-leaf"></i> Vegetarian</span></div>
+          <div class="menu-item-actions">
+            <button class="add-to-cart-btn" data-item-id="ny-cheesecake"
+              onclick="addToCart('ny-cheesecake','New York Cheesecake',3500,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=70')">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+            <button class="view-details-btn" onclick="showModal('ny-cheesecake','New York Cheesecake',3500,'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=70','Creamy, dense classic cheesecake on a buttery biscuit base, topped with fresh berry compote.','veg:Vegetarian')">
+              <i class="fa-solid fa-circle-info"></i> About</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in Asaba, Delta State.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="auth.html">Login / Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08051498689" style="color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a></li>
+        <li><a href="mailto:info@thecloudsvista.com" style="color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a></li>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Open daily · Closes 12 AM</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <div class="newsletter-form" id="newsletter-form">
+        <p>Get exclusive offers to your inbox.</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" id="newsletter-email" placeholder="Your email" aria-label="Newsletter email" />
+          <button onclick="handleNewsletter()" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <p class="newsletter-success" id="newsletter-success"><i class="fa-solid fa-circle-check" style="color:#6EE7B7;"></i> You're subscribed!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a></div>
+    <div class="dress-code-note"><i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome</div>
+    <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to enhance your experience. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script>
+// ── Tag builder helper (called by showModal)
+// tagStr format: "rec:Label|veg:Label|spicy:Label"
+function buildTags(tagStr) {
+  if (!tagStr) return '';
+  return tagStr.split('|').map(t => {
+    const [type, label] = t.split(':');
+    const icons = { rec: 'fa-star tag-rec', veg: 'fa-leaf tag-veg', spicy: 'fa-pepper-hot tag-spicy' };
+    const cls = icons[type] || 'fa-tag tag-rec';
+    const tagCls = cls.split(' ')[1] || 'tag-rec';
+    const iconCls = cls.split(' ')[0];
+    return `<span class="tag ${tagCls}"><i class="fa-solid ${iconCls}"></i> ${label}</span>`;
+  }).join(' ');
+}
+
+// ── Simple wrapper so HTML stays clean
+function showModal(id, name, price, img, desc, tagStr) {
+  openItemModal(id, name, price, img, desc, buildTags(tagStr));
+}
+
+// ── Keep "View Cart" top badge synced
+document.addEventListener('DOMContentLoaded', () => {
+  const badge = document.getElementById('cart-top-badge');
+  const orig = window.updateCartUI;
+  window.updateCartUI = function() {
+    if (orig) orig();
+    if (badge) {
+      const c = getCartCount();
+      badge.textContent = c;
+      badge.style.display = c > 0 ? 'inline' : 'none';
+    }
+  };
+  updateCartUI();
+});
+
+// ── Menu filter
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.classList.toggle('hidden', cat !== 'all' && !(item.dataset.category||'').includes(cat));
+  });
+  document.querySelectorAll('.menu-section').forEach(s => {
+    s.style.display = s.querySelectorAll('.menu-item:not(.hidden)').length === 0 ? 'none' : '';
+  });
+}
+
+// ── Fade-in on scroll
+const iobs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; iobs.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.menu-item, .menu-section-title').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(16px)';
+  el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  iobs.observe(el);
+});
+</script>
+</body>
+</html>

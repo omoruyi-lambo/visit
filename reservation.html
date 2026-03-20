@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Table — Cloud's Vista | Asaba, Nigeria</title>
+  <meta name="description" content="Book a table at Cloud's Vista in Asaba. Reserve online for dine-in — available daily, closes midnight. Call 0805 149 8689 for help." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta active" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="order.html">Order Online</a>
+  <a href="tel:08051498689" style="color:var(--gold);"><i class="fa-solid fa-phone"></i> 0805 149 8689</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1400&q=80');"></div>
+  <div class="page-hero-content">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Reserve a Table</p>
+    <h1>Reserve Your Table</h1>
+  </div>
+</div>
+
+<main class="section">
+
+  <!-- Info strip -->
+  <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:48px; justify-content:center;">
+    <div class="glass-card" style="padding:18px 28px; display:flex; align-items:center; gap:12px; flex:1; min-width:200px; max-width:280px;">
+      <span style="font-size:1.4rem; color:var(--gold);"><i class="fa-regular fa-clock"></i></span>
+      <div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Hours</div>
+        <div style="font-size:0.9rem; color:var(--cream);">Daily · Closes 12 AM</div>
+      </div>
+    </div>
+    <div class="glass-card" style="padding:18px 28px; display:flex; align-items:center; gap:12px; flex:1; min-width:200px; max-width:280px;">
+      <span style="font-size:1.4rem; color:var(--gold);"><i class="fa-solid fa-location-dot"></i></span>
+      <div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Location</div>
+        <div style="font-size:0.9rem; color:var(--cream);">DD'S Centrium, DBS Rd, Asaba</div>
+      </div>
+    </div>
+    <div class="glass-card" style="padding:18px 28px; display:flex; align-items:center; gap:12px; flex:1; min-width:200px; max-width:280px;">
+      <span style="font-size:1.4rem; color:var(--gold);"><i class="fa-solid fa-phone"></i></span>
+      <div>
+        <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:2px;">Prefer to Call?</div>
+        <div style="font-size:0.9rem;"><a href="tel:08051498689" style="color:var(--cream);">0805 149 8689</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation form -->
+  <div class="reservation-wrap">
+
+    <!-- Success state (hidden by default) -->
+    <div id="reservation-success" style="display:none; text-align:center; padding:48px 32px;" class="glass-card">
+      <div style="font-size:3rem; margin-bottom:16px; color:var(--gold);"><i class="fa-solid fa-circle-check"></i></div>
+      <h2 style="font-family:var(--font-display); font-size:2rem; margin-bottom:12px; color:var(--cream);">You're Booked!</h2>
+      <p style="color:var(--cream-dim); max-width:400px; margin:0 auto 24px;">
+        Your reservation request has been received. We'll confirm via WhatsApp or phone within 30 minutes.
+      </p>
+      <div id="booking-summary" style="background:rgba(200,151,58,0.08); border:1px dashed rgba(200,151,58,0.3); border-radius:var(--radius-sm); padding:20px; margin-bottom:28px; text-align:left; font-size:0.9rem; color:var(--cream-dim); line-height:1.9;"></div>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-gold">Back to Home</a>
+        <a href="menu.html" class="btn btn-ghost">Browse Menu</a>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="reservation-card" id="reservation-form-wrap">
+      <div style="margin-bottom:32px;">
+        <span class="section-label">Book a Table</span>
+        <h2 style="font-family:var(--font-display); font-size:1.9rem; font-weight:600;">Make a Reservation</h2>
+        <p style="color:var(--cream-dim); font-size:0.88rem; margin-top:6px;">We accept reservations for groups of any size. For parties of 10+, please call us directly.</p>
+      </div>
+
+      <form id="reservation-form" onsubmit="handleReservation(event)" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-name">Full Name *</label>
+            <input type="text" id="res-name" name="name" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="res-phone">Phone Number *</label>
+            <input type="tel" id="res-phone" name="phone" placeholder="08XX XXX XXXX" required autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="res-email">Email Address</label>
+          <input type="email" id="res-email" name="email" placeholder="For confirmation (optional)" autocomplete="email" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="res-date">Preferred Date *</label>
+            <input type="date" id="res-date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="res-guests">Number of Guests *</label>
+            <select id="res-guests" name="guests" required>
+              <option value="" disabled selected>Select guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7 Guests</option>
+              <option value="8">8 Guests</option>
+              <option value="9">9 Guests</option>
+              <option value="10+">10+ Guests (large group)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="res-time">Preferred Time *</label>
+          <select id="res-time" name="time" required>
+            <option value="" disabled selected>Select time slot</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>2:30 PM</option>
+            <option>3:00 PM</option>
+            <option>3:30 PM</option>
+            <option>4:00 PM</option>
+            <option>4:30 PM</option>
+            <option>5:00 PM</option>
+            <option>5:30 PM</option>
+            <option>6:00 PM</option>
+            <option>6:30 PM</option>
+            <option>7:00 PM</option>
+            <option>7:30 PM</option>
+            <option>8:00 PM</option>
+            <option>8:30 PM</option>
+            <option>9:00 PM</option>
+            <option>9:30 PM</option>
+            <option>10:00 PM</option>
+            <option>10:30 PM</option>
+            <option>11:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="res-occasion">Special Occasion</label>
+          <select id="res-occasion" name="occasion">
+            <option value="">None / Just dining</option>
+            <option>Birthday Celebration</option>
+            <option>Anniversary</option>
+            <option>Romantic Date</option>
+            <option>Business Dinner</option>
+            <option>Family Gathering</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="res-requests">Special Requests</label>
+          <textarea id="res-requests" name="requests" placeholder="Dietary requirements, seating preferences, decorations, etc."></textarea>
+        </div>
+
+        <!-- Dress code reminder -->
+        <div style="display:flex; align-items:flex-start; gap:10px; padding:14px 16px; background:rgba(200,151,58,0.07); border-radius:var(--radius-sm); border:1px dashed rgba(200,151,58,0.25); margin-bottom:20px;">
+          <span style="color:var(--gold);"><i class="fa-solid fa-shirt"></i></span>
+          <p style="font-size:0.82rem; color:var(--cream-dim); line-height:1.5;">
+            <strong style="color:var(--gold);">Dress Code:</strong> Smart casual attire is welcome at Cloud's Vista. We appreciate guests dressing appropriately for the atmosphere.
+          </p>
+        </div>
+
+        <div id="res-error" style="display:none; color:#FC6450; font-size:0.83rem; margin-bottom:16px; padding:10px 16px; background:rgba(252,100,80,0.08); border-radius:8px; border:1px solid rgba(252,100,80,0.2);"></div>
+
+        <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; font-size:0.9rem;">
+          Book Now <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p style="text-align:center; margin-top:16px; font-size:0.78rem; color:var(--cream-dim);">
+          Or call us directly at <a href="tel:08051498689" style="color:var(--gold);">0805 149 8689</a>
+        </p>
+      </form>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in Asaba, Delta State.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="auth.html">Login / Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08051498689" style="color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a></li>
+        <li><a href="mailto:info@thecloudsvista.com" style="color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a></li>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Open daily · Closes 12 AM</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <div class="newsletter-form" id="newsletter-form">
+        <p>Get exclusive offers to your inbox.</p>
+        <div class="newsletter-input-wrap">
+          <input type="email" id="newsletter-email" placeholder="Your email" aria-label="Newsletter email" />
+          <button onclick="handleNewsletter()" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <p class="newsletter-success" id="newsletter-success"><i class="fa-solid fa-circle-check" style="color:#6EE7B7;"></i> You're subscribed!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a></div>
+    <div class="dress-code-note"><i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome</div>
+    <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert"></div>
+<div id="cookie-banner">
+  <p>We use cookies. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // Set minimum date to today
+  const dateInput = document.getElementById('res-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+
+  function handleReservation(e) {
+    e.preventDefault();
+    const name    = document.getElementById('res-name').value.trim();
+    const phone   = document.getElementById('res-phone').value.trim();
+    const date    = document.getElementById('res-date').value;
+    const time    = document.getElementById('res-time').value;
+    const guests  = document.getElementById('res-guests').value;
+    const occasion = document.getElementById('res-occasion').value;
+    const requests = document.getElementById('res-requests').value;
+    const errEl   = document.getElementById('res-error');
+
+    errEl.style.display = 'none';
+
+    if (!name)   { errEl.textContent = 'Please enter your name.';     errEl.style.display = 'block'; return; }
+    if (!phone)  { errEl.textContent = 'Please enter your phone number.'; errEl.style.display = 'block'; return; }
+    if (!date)   { errEl.textContent = 'Please choose a date.';        errEl.style.display = 'block'; return; }
+    if (!time)   { errEl.textContent = 'Please choose a time slot.';   errEl.style.display = 'block'; return; }
+    if (!guests) { errEl.textContent = 'Please select number of guests.'; errEl.style.display = 'block'; return; }
+
+    // Show loading state
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Confirming...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      // Save reservation to history for account dashboard
+      try {
+        const formatted = new Date(date + 'T00:00:00').toLocaleDateString('en-NG', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+        const reservations = JSON.parse(localStorage.getItem('cv_reservations') || '[]');
+        reservations.unshift({ date: formatted, time, guests, occasion, requests, name, phone, id: 'RES-' + Date.now() });
+        localStorage.setItem('cv_reservations', JSON.stringify(reservations.slice(0, 20)));
+      } catch(e) {}
+
+      // Show success state
+      document.getElementById('reservation-form-wrap').style.display = 'none';
+      const success = document.getElementById('reservation-success');
+      const formatted = new Date(date + 'T00:00:00').toLocaleDateString('en-NG', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+      document.getElementById('booking-summary').innerHTML =
+        `<i class="fa-regular fa-calendar"></i> <strong>Date:</strong> ${formatted}<br>` +
+        `<i class="fa-regular fa-clock"></i> <strong>Time:</strong> ${time}<br>` +
+        `<i class="fa-solid fa-users"></i> <strong>Guests:</strong> ${guests}<br>` +
+        `<i class="fa-solid fa-user"></i> <strong>Name:</strong> ${name}<br>` +
+        `<i class="fa-solid fa-phone"></i> <strong>Phone:</strong> ${phone}` +
+        (occasion ? `<br><i class="fa-solid fa-champagne-glasses"></i> <strong>Occasion:</strong> ${occasion}` : '') +
+        (requests ? `<br><i class="fa-solid fa-note-sticky"></i> <strong>Requests:</strong> ${requests}` : '');
+      success.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 1400);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up — Cloud's Vista</title>
+  <meta name="description" content="Sign in or create your Cloud's Vista account to manage reservations, track orders and enjoy exclusive offers." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav id="navbar" style="background:rgba(15,26,36,0.98)!important; backdrop-filter:blur(20px);">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="tel:08051498689" style="color:var(--gold);"><i class="fa-solid fa-phone"></i> 0805 149 8689</a>
+</div>
+
+<div class="auth-page-wrap">
+  <div class="auth-page-bg" aria-hidden="true"></div>
+
+  <div class="auth-card">
+
+    <!-- Logo -->
+    <div class="auth-logo">
+      <a href="index.html">CLOUD'S <span>VISTA</span></a>
+      <p style="font-size:0.8rem; color:var(--cream-dim); margin-top:6px; font-family:var(--font-body);">Your personal dining account</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" id="tab-login" onclick="switchTab('login')" role="tab" aria-selected="true">
+        <i class="fa-solid fa-right-to-bracket"></i> Sign In
+      </button>
+      <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')" role="tab" aria-selected="false">
+        <i class="fa-solid fa-user-plus"></i> Create Account
+      </button>
+    </div>
+
+    <!-- ── LOGIN FORM ─────────────────────────────────────── -->
+    <div class="auth-form active" id="form-login" role="tabpanel">
+      <h2>Welcome back</h2>
+      <p class="auth-sub">Sign in to manage your orders and reservations.</p>
+
+      <div class="auth-error" id="login-error"></div>
+      <div class="auth-success" id="login-success"></div>
+
+      <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+        <div class="auth-field">
+          <label for="login-email">Email Address</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="login-pass">Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="login-pass" placeholder="Your password" autocomplete="current-password" required />
+            <span class="toggle-pass" onclick="togglePass('login-pass', this)"><i class="fa-solid fa-eye"></i></span>
+          </div>
+        </div>
+
+        <div class="auth-row">
+          <label class="auth-check">
+            <input type="checkbox" id="remember-me" />
+            Remember me
+          </label>
+          <span class="auth-link" onclick="showForgotPassword()">Forgot password?</span>
+        </div>
+
+        <button type="submit" class="auth-submit">
+          <i class="fa-solid fa-right-to-bracket"></i> Sign In
+        </button>
+      </form>
+
+      <p class="auth-footer-note">
+        Don't have an account? <span class="auth-link" onclick="switchTab('signup')">Create one — it's free</span>
+      </p>
+    </div>
+
+    <!-- ── SIGNUP FORM ─────────────────────────────────────── -->
+    <div class="auth-form" id="form-signup" role="tabpanel">
+      <h2>Join Cloud's Vista</h2>
+      <p class="auth-sub">Create your account and enjoy exclusive perks.</p>
+
+      <div class="auth-error" id="signup-error"></div>
+      <div class="auth-success" id="signup-success"></div>
+
+      <form id="signup-form" onsubmit="handleSignup(event)" novalidate>
+        <div class="auth-field">
+          <label for="signup-name">Full Name</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="signup-name" placeholder="Your full name" autocomplete="name" required />
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="signup-email">Email Address</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="signup-phone">Phone Number <span style="color:var(--cream-dim); font-weight:400;">(optional)</span></label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-phone"></i>
+            <input type="tel" id="signup-phone" placeholder="08XX XXX XXXX" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="signup-pass">Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="signup-pass" placeholder="Min. 8 characters"
+              autocomplete="new-password" oninput="checkPassStrength(this.value)" required />
+            <span class="toggle-pass" onclick="togglePass('signup-pass', this)"><i class="fa-solid fa-eye"></i></span>
+          </div>
+          <div class="pass-strength" id="pass-strength">
+            <div class="pass-strength-bar"><div class="pass-strength-fill" id="pass-fill"></div></div>
+            <div class="pass-strength-text" id="pass-text"></div>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="signup-confirm">Confirm Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="signup-confirm" placeholder="Repeat password" autocomplete="new-password" required />
+            <span class="toggle-pass" onclick="togglePass('signup-confirm', this)"><i class="fa-solid fa-eye"></i></span>
+          </div>
+        </div>
+
+        <label class="auth-check" style="margin-bottom:16px; font-size:0.8rem;">
+          <input type="checkbox" id="agree-terms" required />
+          I agree to the
+          <a href="terms.html" style="color:var(--gold);">Terms of Service</a>,
+          <a href="privacy.html" style="color:var(--gold);">Privacy Policy</a> and
+          <a href="cookies.html" style="color:var(--gold);">Cookie Policy</a>
+        </label>
+
+        <label class="auth-check" style="margin-bottom:20px; font-size:0.8rem;">
+          <input type="checkbox" id="agree-newsletter" />
+          Send me exclusive offers and updates
+        </label>
+
+        <button type="submit" class="auth-submit">
+          <i class="fa-solid fa-user-plus"></i> Create Account
+        </button>
+      </form>
+
+      <p class="auth-footer-note">
+        Already have an account? <span class="auth-link" onclick="switchTab('login')">Sign in</span>
+      </p>
+    </div>
+
+  </div><!-- /auth-card -->
+</div>
+
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  // Redirect if already logged in
+  if (typeof getUser === 'function' && getUser()) window.location.href = 'index.html';
+
+  // Read ?tab=signup from URL
+  const urlTab = new URLSearchParams(window.location.search).get('tab');
+  if (urlTab === 'signup') switchTab('signup');
+
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('tab-' + tab).setAttribute('aria-selected','true');
+    document.getElementById('form-' + tab).classList.add('active');
+  }
+
+  function togglePass(id, icon) {
+    const input = document.getElementById(id);
+    const isPass = input.type === 'password';
+    input.type = isPass ? 'text' : 'password';
+    icon.innerHTML = isPass ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+  }
+
+  function checkPassStrength(val) {
+    const fill = document.getElementById('pass-fill');
+    const text = document.getElementById('pass-text');
+    let score = 0;
+    if (val.length >= 8) score++;
+    if (/[A-Z]/.test(val)) score++;
+    if (/[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+    const configs = [
+      { w:'0%', color:'transparent', label:'' },
+      { w:'25%', color:'#FC6450', label:'Weak' },
+      { w:'50%', color:'#FBBF24', label:'Fair' },
+      { w:'75%', color:'#60A5FA', label:'Good' },
+      { w:'100%', color:'#6EE7B7', label:'Strong' },
+    ];
+    const cfg = configs[score] || configs[0];
+    fill.style.width = cfg.w; fill.style.background = cfg.color;
+    text.textContent = cfg.label; text.style.color = cfg.color;
+  }
+
+  function showForgotPassword() {
+    showToast('<i class="fa-solid fa-envelope"></i>&nbsp; Contact info@thecloudsvista.com to reset your password.');
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value.trim();
+    const pass  = document.getElementById('login-pass').value;
+    const errEl = document.getElementById('login-error');
+    const sucEl = document.getElementById('login-success');
+    errEl.style.display = 'none';
+    if (!email || !pass) { errEl.textContent = 'Please enter your email and password.'; errEl.style.display='block'; return; }
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Signing in…'; btn.disabled = true;
+    setTimeout(() => {
+      const user = authenticateUser(email, pass);
+      if (user) {
+        saveUser({ name: user.name, email: user.email, phone: user.phone });
+        sucEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> Welcome back, ${user.name.split(' ')[0]}! Redirecting…`;
+        sucEl.style.display = 'block';
+        setTimeout(() => { window.location.href = new URLSearchParams(window.location.search).get('redirect') || 'index.html'; }, 1200);
+      } else {
+        errEl.textContent = 'Invalid email or password. Try again or create a new account.';
+        errEl.style.display = 'block';
+        btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Sign In'; btn.disabled = false;
+      }
+    }, 900);
+  }
+
+  function handleSignup(e) {
+    e.preventDefault();
+    const name    = document.getElementById('signup-name').value.trim();
+    const email   = document.getElementById('signup-email').value.trim();
+    const phone   = document.getElementById('signup-phone').value.trim();
+    const pass    = document.getElementById('signup-pass').value;
+    const confirm = document.getElementById('signup-confirm').value;
+    const terms   = document.getElementById('agree-terms').checked;
+    const errEl   = document.getElementById('signup-error');
+    const sucEl   = document.getElementById('signup-success');
+    errEl.style.display = 'none';
+    if (!name)                       { errEl.textContent = 'Please enter your full name.'; errEl.style.display='block'; return; }
+    if (!email || !email.includes('@')) { errEl.textContent = 'Please enter a valid email address.'; errEl.style.display='block'; return; }
+    if (pass.length < 8)            { errEl.textContent = 'Password must be at least 8 characters.'; errEl.style.display='block'; return; }
+    if (pass !== confirm)            { errEl.textContent = 'Passwords do not match.'; errEl.style.display='block'; return; }
+    if (!terms)                      { errEl.textContent = 'Please agree to the Terms of Service, Privacy Policy and Cookie Policy.'; errEl.style.display='block'; return; }
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Creating account…'; btn.disabled = true;
+    setTimeout(() => {
+      const ok = registerUser(name, email, phone, pass);
+      if (ok) {
+        saveUser({ name, email, phone });
+        sucEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> Account created! Welcome, ${name.split(' ')[0]}! Redirecting…`;
+        sucEl.style.display = 'block';
+        setTimeout(() => window.location.href = 'index.html', 1400);
+      } else {
+        errEl.textContent = 'An account with this email already exists. Please sign in instead.';
+        errEl.style.display = 'block';
+        btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Create Account'; btn.disabled = false;
+      }
+    }, 900);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy — Cloud's Vista</title>
+  <meta name="description" content="Cloud's Vista Cookie Policy — what cookies we use, why, and how to control them." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span id="hours-status"></span>
+  <a href="reservation.html" class="btn btn-gold nav-cta" style="font-size:0.78rem; padding:11px 24px;">Reserve a Table</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="reservation.html">Reserve</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="height:320px;">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=60');"></div>
+  <div class="page-hero-content">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Cookie Policy</p>
+    <h1>Cookie Policy</h1>
+  </div>
+</div>
+
+<main style="background:var(--charcoal);">
+  <div class="policy-wrap">
+    <p class="policy-date"><i class="fa-regular fa-calendar" style="color:var(--gold);"></i> Last updated: 19 March 2025 &nbsp;·&nbsp; Effective immediately</p>
+
+    <div class="policy-highlight">
+      <strong>In plain English:</strong> We use cookies to keep your cart working, remember your preferences, and understand how people use our website. You can control or disable non-essential cookies at any time using the settings below.
+    </div>
+
+    <!-- TOC -->
+    <div class="policy-toc">
+      <h3><i class="fa-solid fa-list"></i> Contents</h3>
+      <ol>
+        <li><a href="#what-are-cookies">What Are Cookies?</a></li>
+        <li><a href="#how-we-use-cookies">How We Use Cookies</a></li>
+        <li><a href="#types-of-cookies">Types of Cookies We Use</a></li>
+        <li><a href="#third-party-cookies">Third-Party Cookies</a></li>
+        <li><a href="#your-cookie-choices">Your Cookie Choices</a></li>
+        <li><a href="#local-storage">Local Storage &amp; Session Storage</a></li>
+        <li><a href="#cookie-updates">Updates to This Policy</a></li>
+        <li><a href="#cookie-contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. What are cookies -->
+    <div class="policy-section" id="what-are-cookies">
+      <h2>1. What Are Cookies?</h2>
+      <p>Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners.</p>
+      <p>Cookies can be <strong>session cookies</strong> (deleted when you close your browser) or <strong>persistent cookies</strong> (which remain on your device for a set period or until you delete them). They can be set by the website you're visiting (first-party cookies) or by third parties whose services are embedded in the website.</p>
+    </div>
+
+    <!-- 2. How we use -->
+    <div class="policy-section" id="how-we-use-cookies">
+      <h2>2. How We Use Cookies</h2>
+      <p>We use cookies and similar technologies to:</p>
+      <ul>
+        <li>Remember your cookie consent preference so we don't ask you every time</li>
+        <li>Keep your shopping cart intact as you browse different pages</li>
+        <li>Keep you signed in to your account during your visit</li>
+        <li>Remember your newsletter subscription preference</li>
+        <li>Understand which pages and features are most popular</li>
+        <li>Improve the performance and functionality of our website</li>
+        <li>Prevent fraud and ensure security</li>
+      </ul>
+    </div>
+
+    <!-- 3. Types of cookies -->
+    <div class="policy-section" id="types-of-cookies">
+      <h2>3. Types of Cookies We Use</h2>
+
+      <table class="cookie-type-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Cookie Name / Key</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+            <th>Essential?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Strictly Necessary</strong></td>
+            <td><code>cv_cookie_consent</code></td>
+            <td>Stores your cookie preference (accepted/declined) so we don't show the banner again</td>
+            <td>1 year</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td><strong>Functionality</strong></td>
+            <td><code>cv_cart</code> (sessionStorage)</td>
+            <td>Maintains your shopping cart contents during your browsing session</td>
+            <td>Session</td>
+            <td>Yes — for ordering</td>
+          </tr>
+          <tr>
+            <td><strong>Functionality</strong></td>
+            <td><code>cv_user</code> (localStorage)</td>
+            <td>Stores your login session so you remain signed in across visits</td>
+            <td>Until sign-out</td>
+            <td>Yes — for account</td>
+          </tr>
+          <tr>
+            <td><strong>Functionality</strong></td>
+            <td><code>cv_users</code> (localStorage)</td>
+            <td>Stores registered user accounts locally (simulated database)</td>
+            <td>Persistent</td>
+            <td>Yes — for auth</td>
+          </tr>
+          <tr>
+            <td><strong>Analytics</strong></td>
+            <td>Google Analytics <code>_ga</code>, <code>_gid</code></td>
+            <td>Tracks anonymous usage patterns to help us understand which pages are most visited and improve the website</td>
+            <td>2 years / 24 hours</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Performance</strong></td>
+            <td>Font / CDN cache</td>
+            <td>Caches Google Fonts and Font Awesome icons for faster loading</td>
+            <td>1 year</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:16px;">We do <strong>not</strong> use cookies for advertising, retargeting, or cross-site tracking.</p>
+    </div>
+
+    <!-- 4. Third-party cookies -->
+    <div class="policy-section" id="third-party-cookies">
+      <h2>4. Third-Party Cookies</h2>
+      <p>Some cookies on our website are set by third parties. These include:</p>
+      <ul>
+        <li><strong>Google Fonts &amp; Google Maps:</strong> May set cookies related to font delivery and map embedding. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+        <li><strong>Font Awesome (Cloudflare CDN):</strong> Icon fonts are loaded from Cloudflare's CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</li>
+        <li><strong>WhatsApp:</strong> When you initiate a WhatsApp conversation through our checkout, you are redirected to WhatsApp's platform. See <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">WhatsApp's Privacy Policy</a>.</li>
+        <li><strong>Unsplash (image CDN):</strong> Product and background images may be loaded from Unsplash servers. See <a href="https://unsplash.com/privacy" target="_blank" rel="noopener noreferrer">Unsplash's Privacy Policy</a>.</li>
+      </ul>
+      <p>We do not control third-party cookies and are not responsible for their policies. We recommend reviewing the relevant policies linked above.</p>
+    </div>
+
+    <!-- 5. Your choices -->
+    <div class="policy-section" id="your-cookie-choices">
+      <h2>5. Your Cookie Choices</h2>
+
+      <p>You have several options to control cookies:</p>
+
+      <!-- Quick preference reset -->
+      <div class="policy-highlight">
+        <strong>Reset your cookie preference on this site:</strong><br />
+        <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+          <button onclick="acceptCookiesManual()" class="btn btn-gold" style="font-size:0.78rem; padding:10px 20px;">
+            <i class="fa-solid fa-circle-check"></i> Accept All Cookies
+          </button>
+          <button onclick="declineCookiesManual()" class="btn btn-ghost" style="font-size:0.78rem; padding:10px 20px;">
+            <i class="fa-solid fa-circle-xmark"></i> Decline Non-Essential
+          </button>
+          <button onclick="clearAllCookiePrefs()" class="btn btn-outline" style="font-size:0.78rem; padding:10px 20px;">
+            <i class="fa-solid fa-rotate-left"></i> Reset Preference
+          </button>
+        </div>
+        <p id="cookie-pref-status" style="margin-top:10px; font-size:0.8rem; color:var(--gold);"></p>
+      </div>
+
+      <h3 style="font-family:var(--font-display); font-size:1.2rem; margin:24px 0 10px; color:var(--cream);">Browser-level controls</h3>
+      <p>You can also manage cookies through your browser settings:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+        <li><a href="https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+      </ul>
+      <p><strong>Please note:</strong> Disabling strictly necessary cookies (such as those required for the cart and account functionality) will affect your ability to place orders and sign in to your account.</p>
+    </div>
+
+    <!-- 6. Local storage -->
+    <div class="policy-section" id="local-storage">
+      <h2>6. Local Storage &amp; Session Storage</h2>
+      <p>In addition to cookies, we use HTML5 <strong>localStorage</strong> and <strong>sessionStorage</strong> to store data on your device. These technologies work similarly to cookies but store data locally in your browser without sending it to our servers with every request.</p>
+      <ul>
+        <li><code>localStorage</code> — persists until cleared: stores your account session (<code>cv_user</code>), registered users (<code>cv_users</code>), and cookie consent preference (<code>cv_cookie_consent</code>).</li>
+        <li><code>sessionStorage</code> — cleared when you close the browser tab: stores your current cart contents (<code>cv_cart</code>).</li>
+      </ul>
+      <p>You can clear all local storage data by going to your browser's developer tools (F12 → Application → Local Storage / Session Storage) and deleting the relevant keys, or by clearing your browser's site data.</p>
+    </div>
+
+    <!-- 7. Updates -->
+    <div class="policy-section" id="cookie-updates">
+      <h2>7. Updates to This Policy</h2>
+      <p>We may update this Cookie Policy from time to time as our website evolves or to comply with legal requirements. The "Last updated" date at the top of this page will reflect any changes. We encourage you to review this page periodically.</p>
+    </div>
+
+    <!-- 8. Contact -->
+    <div class="policy-section" id="cookie-contact">
+      <h2>8. Contact Us</h2>
+      <p>If you have questions about our use of cookies, please contact us:</p>
+      <div class="policy-highlight">
+        <strong>Cloud's Vista</strong><br />
+        DD'S Centrium, DBS Road, Central Area, Asaba 320108, Delta State, Nigeria<br />
+        <i class="fa-solid fa-envelope" style="color:var(--gold);"></i> <a href="mailto:info@thecloudsvista.com">info@thecloudsvista.com</a><br />
+        <i class="fa-solid fa-phone" style="color:var(--gold);"></i> <a href="tel:08051498689">0805 149 8689</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; padding:32px 0 16px;">
+      <a href="privacy.html" class="btn btn-ghost" style="margin-right:12px;"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+      <a href="contact.html" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">CLOUD'S <span>VISTA</span></a>
+      <p>An upscale dining destination in Asaba, Delta State.</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/thecloudsvista" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/2348051498689?text=Hello%20Cloud%27s%20Vista%2C%20I%27d%20like%20to%20make%20an%20inquiry" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservation.html">Reservations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+        <li><a href="auth.html">Login / Sign Up</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:08051498689" style="color:var(--cream-dim);"><i class="fa-solid fa-phone" style="color:var(--gold); width:16px;"></i> 0805 149 8689</a></li>
+        <li><a href="mailto:info@thecloudsvista.com" style="color:var(--cream-dim);"><i class="fa-solid fa-envelope" style="color:var(--gold); width:16px;"></i> info@thecloudsvista.com</a></li>
+        <li style="color:var(--cream-dim); font-size:0.9rem;">Open daily · Closes 12 AM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Cloud's Vista · <a href="https://thecloudsvista.com" target="_blank" rel="noopener noreferrer">thecloudsvista.com</a></div>
+    <div class="dress-code-note"><i class="fa-solid fa-shirt" style="color:var(--gold);"></i> Smart casual attire welcome</div>
+    <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+<div id="toast" class="toast" role="alert"></div>
+<div id="cookie-banner">
+  <p>We use cookies. <a href="cookies.html">Learn more</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // Show current preference
+  function showPref() {
+    const pref = localStorage.getItem('cv_cookie_consent');
+    const el = document.getElementById('cookie-pref-status');
+    if (!el) return;
+    if (!pref) el.textContent = 'No preference set — the banner will appear on your next visit.';
+    else el.textContent = `Current preference: ${pref === 'accepted' ? '✅ Accepted' : '❌ Declined'}`;
+  }
+  function acceptCookiesManual() { localStorage.setItem('cv_cookie_consent','accepted'); document.getElementById('cookie-banner')?.classList.remove('visible'); showPref(); showToast('Cookies accepted. Thank you!'); }
+  function declineCookiesManual() { localStorage.setItem('cv_cookie_consent','declined'); document.getElementById('cookie-banner')?.classList.remove('visible'); showPref(); showToast('Non-essential cookies declined.'); }
+  function clearAllCookiePrefs() { localStorage.removeItem('cv_cookie_consent'); showPref(); showToast('Cookie preference reset. Refresh the page to see the banner again.'); }
+  showPref();
+</script>
+</body>
+</html>
